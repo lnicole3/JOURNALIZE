@@ -9,7 +9,7 @@ const Register = () => {
     last_name: '',
     username: '',
     email: '',
-    password: '',
+    passwordInput: '',
     confirmPassword: ''
   })
 
@@ -22,11 +22,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      first_name: formValues.first_name,
-      last_name: formValues.last_name,
-      username: formValues.username,
-      email: formValues.email,
-      password: formValues.password
+      ...formValues
     })
 
     setFormValues({
@@ -34,10 +30,10 @@ const Register = () => {
       last_name: '',
       username: '',
       email: '',
-      password: '',
+      passwordInput: '',
       confirmPassword: ''
     })
-    navigate('/signin')
+    navigate('/login')
   }
 
   return (
@@ -48,7 +44,7 @@ const Register = () => {
             <label htmlFor="name">First Name</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="first_name"
               type="text"
               value={formValues.first_name}
               required
@@ -58,7 +54,7 @@ const Register = () => {
             <label htmlFor="name">Last Name</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="last_name"
               type="text"
               value={formValues.last_name}
               required
@@ -68,7 +64,7 @@ const Register = () => {
             <label htmlFor="name">Username</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="username"
               type="text"
               value={formValues.username}
               required
@@ -87,12 +83,12 @@ const Register = () => {
           </div>
 
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="passwordInput">Password</label>
             <input
               onChange={handleChange}
               type="password"
-              name="password"
-              value={formValues.password}
+              name="passwordInput"
+              value={formValues.passwordInput}
               required
             />
           </div>

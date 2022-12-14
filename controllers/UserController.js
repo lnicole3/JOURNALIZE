@@ -41,9 +41,20 @@ const updateUserEmail = async (req, res) => {
   }
 }
 
+const deleteUser = async (req, res) => {
+  try {
+    const userId = parseInt(req.params.user_id)
+    await User.destroy({ where: { id: userId } })
+    res.send(`User Deleted`)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getUsers,
   getOneUser,
   getUserByEmail,
-  updateUserEmail
+  updateUserEmail,
+  deleteUser
 }

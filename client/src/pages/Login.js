@@ -3,7 +3,7 @@ import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 const SignIn = (props) => {
-  const [formValues, setFormValues] = useState({ email: '', password: '' })
+  const [formValues, setFormValues] = useState({ email: '', passwordInput: '' })
 
   let navigate = useNavigate()
 
@@ -13,11 +13,11 @@ const SignIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = await SignInUser(formValues)
-    setFormValues({ email: '', password: '' })
+    const payload = await SignInUser({ ...formValues })
+    setFormValues({ email: '', passwordInput: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
-    navigate(-1)
+    navigate('/')
   }
 
   return (
@@ -36,16 +36,16 @@ const SignIn = (props) => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="passwordInput">Password</label>
             <input
               onChange={handleChange}
               type="password"
-              name="password"
-              value={formValues.password}
+              name="passwordInput"
+              value={formValues.passwordInput}
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
+          <button disabled={!formValues.email || !formValues.passwordInput}>
             Sign In
           </button>
         </form>

@@ -23,7 +23,7 @@ function App() {
       <main>
         <Routes>
           <Route
-            path="/home"
+            path="/"
             element={<Home user={user} authenticated={authenticated} />}
           />
           <Route path="/register" element={<Register />} />
