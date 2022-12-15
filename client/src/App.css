@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 3fr));
+  grid-gap: 5px;
+  align-content: space-between;
+  align-items: stretch;
+  margin: 50px;;
 }
 
 .App-logo {
@@ -14,8 +20,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: white;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +29,39 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.nav-links{
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color:#ADEEE3;
+  display: inline;
+  margin-right: 30px;
+  padding: 20px;
+}
+
+
+a {
+  float: inline-end;
+  list-style: none;
+  margin-top:20px;
+  padding-right:20px
+}
+
+.journal_card{
+  background-color: peachpuff ;
+  padding: 1em;
+  width: 30em;
+  height: 25em;
+  border-radius: 0.5em;
+  margin: 1em;
+  justify-content: space-around;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
+  color: black;
+  cursor: pointer;
+
+}
+
 
 .App-link {
   color: #61dafb;

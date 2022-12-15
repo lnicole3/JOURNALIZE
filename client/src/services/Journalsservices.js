@@ -10,10 +10,10 @@ export const CreateJournal = async (userId, data) => {
   }
 }
 
-export const GetJournal = async (journal_id) => {
+export const GetJournal = async (data) => {
   try {
     let response = await axios.get(
-      `http://localhost:3001/api/reviews/${journal_id}`
+      `http://localhost:3001/api/reviews/${data.id}`
     )
     return response.data
   } catch (error) {

@@ -9,10 +9,7 @@ const JournalCard = ({journal, user}) => {
         navigate(`/journals/${journal.id}`);
     }
   return (
-    <div className="journal-card">
-    <div className="journal-name" onClick={handleClick}>{journal.name}</div>
-
-</div>
+    <div onClick={handleClick}>{journal.journal_name}</div>
   )
 }
 
