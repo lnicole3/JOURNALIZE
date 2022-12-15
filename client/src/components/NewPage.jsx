@@ -44,7 +44,7 @@ const handleSubmit = async (e) => {
         <h3>NewPage</h3>
         <form onSubmit={handleSubmit}>
             <label name="journal_entry">Journal Entry</label>
-            <input name="journal_entry" value={formState.journal_entry} onChange={handleChange}/>
+            <textarea name="journal_entry" value={formState.journal_entry} onChange={handleChange}/>
             <label name="mood">Mood</label>
             <input name="mood" value={formState.mood} onChange={handleChange}/>
             <button type="submit">Submit</button>

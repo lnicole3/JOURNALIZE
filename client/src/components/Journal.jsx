@@ -56,9 +56,10 @@ const Journal = () => {
         <h3>Pages</h3>
         {pages?.map((page) => (
             <div className='page-card' key={page?.page_id}>
-                <h2>{page?.createdAt}</h2>
+            
                 <p>{page?.journal_entry}</p>
                 <p>{page?.mood}</p>
+                <p>{page?.createdAt}</p>
                 <Link to={`/pages/${page?.id}`}>Edit</Link>
                 </div>
         ))}
