@@ -39,12 +39,12 @@ apiCall()
 return (
 <div className="create-journal">
     <form onSubmit={handleSubmit}>
-    <label htmlFor="journal-name">Journal Name</label>
-    <textarea className="journal-textbox"
+    <label htmlFor="journal-name">Enter Your Journal Name</label>
+    <input className="journal-textbox"
     name="journalName"
     onChange={handleChange}
     value={formValues.journalName}
-    ></textarea>
+    ></input>
     <button onClick={handleSubmit} type="submit" className="submit-review">
      Submit
     </button>

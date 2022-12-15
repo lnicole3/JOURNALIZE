@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GetJournalList, CreateJournal } from '../services/JournalsServices'
+import { GetJournalList } from '../services/JournalsServices'
 import JournalCard from '../components/JournalCard'
 import Client from '../services/api'
 import NewJournal from '../components/NewJournal'
@@ -28,7 +28,9 @@ const Journals = ({ user }) => {
       </div>
       <div className="journal_card">
         {journalList?.map((journal) => (
-          <JournalCard key={journal.id} journal={journal} />
+          <div className="journal-name">
+            <JournalCard key={journal.id} journal={journal} />
+          </div>
         ))}
       </div>
     </div>

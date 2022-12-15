@@ -5,7 +5,9 @@
   grid-gap: 5px;
   align-content: space-between;
   align-items: stretch;
-  margin: 50px;;
+  margin: 50px;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
 }
 
 .App-logo {
@@ -48,10 +50,34 @@ a {
   padding-right:20px
 }
 
+.register{
+  display: flex inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.register label{
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+.register input {
+  width: 100%;
+  font-size: 14px;
+}
+.resources{
+  display: flex;
+  flex-direction: column;
+  margin:30px;
+}
+
 .home-wrapper{
   padding:20px;
   display: flex;
   flex-direction: column;
+  margin:30px;
 }
 
 .create-journal{
@@ -75,6 +101,8 @@ textarea {
 
 button{
   border-radius: 50%;
+  border-color: white;
+  background-color: peachpuff;
 }
 
 .journal_card{
@@ -88,6 +116,18 @@ button{
   box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
   color: black;
   cursor: pointer;
+}
+
+.journal-name{
+  border: white;
+  border-width: 10px;
+}
+
+.page-grid{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 
 }
 
@@ -104,6 +144,17 @@ button{
   border-radius: 10%;
 }
 
+.journal-entry-page-card{
+  padding:20px;
+  font-size: 30px;
+
+}
+
+.mood{
+font-family: 'Satisfy', cursive;
+font-size: 25px;
+  ;
+}
 
 .App-link {
   color: #61dafb;

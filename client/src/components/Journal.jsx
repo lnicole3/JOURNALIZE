@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useParams, useNavigate } from 'react-router-dom'
-import NewPage from './NewPage'
 
 //journal/journal_id
 
 const Journal = () => {
 
     const [pages, setPages] = useState([])
+    const [journalName, setJournalName] = useState([])
 
     const [formState, setFormState] = useState({
       journal_entry: '',
@@ -29,6 +29,8 @@ const Journal = () => {
       }, [])
 
 
+
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         let newPage= await axios
@@ -46,25 +48,23 @@ const Journal = () => {
             createdAt: '',
           })
         }
-        const handleClick = () => {
-            navigate(`/pages/new`);
-        }
    
 
   return (
     <div className='page-grid'>
-        <h3>Pages</h3>
+   <h2>Journal Pages</h2>
         {pages?.map((page) => (
             <div className='page-card' key={page?.page_id}>
             
-                <p>{page?.journal_entry}</p>
-                <p>{page?.mood}</p>
+                <h3 className='journal-entry-page-card'>"{page?.journal_entry}"</h3>
+                <h4>Mood:</h4>
+                <p className='mood'>{page?.mood}</p>
                 <p>{page?.createdAt}</p>
-                <Link to={`/pages/${page?.id}`}>Edit</Link>
+                <Link to={`/pages/${page?.id}`} style={{textDecoration: 'none'}}>Edit</Link>
                 </div>
         ))}
          <div>
-        <Link to={`/new-page/${journal_id}`}>New Page</Link>
+        <Link to={`/new-page/${journal_id}`} style={{textDecoration: 'none'}}>New Page</Link>
  
         </div>
     </div>

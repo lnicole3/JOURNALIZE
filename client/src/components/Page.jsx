@@ -25,7 +25,7 @@ const Page = () => {
       }, [])
       
     const handleChange = (event) => {
-        setFormState({ ...formState, [event.target.id]: event.target.value })
+        setFormState({ ...formState, [event.target.name]: event.target.value })
       }
 
 
@@ -34,7 +34,7 @@ const Page = () => {
         let updatePage = await axios
             .put(`http://localhost:3001/api/pages/${page_id}`, formState)
             .then((response) => {
-                navigate('/pages')
+                navigate(`/journals/${page_id}`)
             })
             .catch((error) => {
                 console.log(error)
@@ -69,10 +69,10 @@ const Page = () => {
     <div className='form'>
         <h1>Update Journal Page</h1>
         <form onSubmit={handleSubmit}>
-            <label name="journal-entry">Journal Entry</label>
-            <input id="journal-entry" value={formState.journal_entry} onChange={handleChange}/>
+            <label name="journal_entry">Journal Entry</label>
+            <textarea name="journal_entry" value={formState.journal_entry} onChange={handleChange}/>
             <label name="mood">Mood</label>
-            <input id="mood" value={formState.mood} onChange={handleChange}/>
+            <input name="mood" value={formState.mood} onChange={handleChange}/>
             <button type="submit">Submit</button>
 
         </form>
