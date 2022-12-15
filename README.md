@@ -24,9 +24,9 @@ This is an application where you can create journal entries online. Journals wil
 
 ## Planning
 
-![Wireframe](/images/break_wireframe.png)
-![Component Hierarchy Diagram](/images/break_chd.png)
-![Entity Relationship Diagram](/images/break_erd.png)
+![Wireframe](/client/images/break_wireframe.png)
+![Component Hierarchy Diagram](/client/images/break_chd.png)
+![Entity Relationship Diagram](/client/images/break_erd.png)
 
 ### Technologies Used
 
