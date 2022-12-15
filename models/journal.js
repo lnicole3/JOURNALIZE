@@ -1,5 +1,6 @@
 'use strict'
 const { Model } = require('sequelize')
+
 module.exports = (sequelize, DataTypes) => {
   class Journal extends Model {
     /**
@@ -8,14 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Journal.hasMany(models.Page, { foreignKey: 'journal_id' })
+      Journal.belongsTo(models.User, { foreignKey: 'user_id' })
     }
   }
   Journal.init(
     {
       journal_name: DataTypes.STRING,
-      user_id: DataTypes.INTEGER,
-      page_id: DataTypes.INTEGER
+      user_id: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'users', key: 'id' }
+      }
     },
     {
       sequelize,

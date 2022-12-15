@@ -15,8 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     {
       journal_entry: DataTypes.STRING,
       mood: DataTypes.STRING,
-      journal_id: DataTypes.INTEGER,
-      user_id: DataTypes.INTEGER
+      journal_id: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'journals', key: 'id' }
+      }
     },
     {
       sequelize,

@@ -18,7 +18,22 @@ const getJournalById = async (req, res) => {
   }
 }
 
+const createJournal = async (req, res) => {
+  try {
+    let userId = parseInt(req.params.user_id)
+    let journalContent = {
+      user_id: userId,
+      ...req.body
+    }
+    let journal = await Journal.create(journalContent)
+    res.send(journal)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getJournals,
-  getJournalById
+  getJournalById,
+  createJournal
 }

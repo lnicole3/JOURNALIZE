@@ -7,14 +7,14 @@ module.exports = {
       {
         journal_name: '2022',
         user_id: 1,
-        page_id: 1,
+
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         journal_name: 'Sleep',
         user_id: 1,
-        page_id: 2,
+
         createdAt: new Date(),
         updatedAt: new Date()
       }

@@ -12,7 +12,7 @@ const getPages = async (req, res) => {
 
 const getJournalPages = async (req, res) => {
   try {
-    const journalId = req.params.id
+    const journalId = parseInt(req.params.id)
     const page = await Page.findAll({ where: { journal_id: journalId } })
     res.send(page)
   } catch (error) {
@@ -22,11 +22,7 @@ const getJournalPages = async (req, res) => {
 
 const addPage = async (req, res) => {
   try {
-    let journalId = parseInt(req.params.journal_id)
-    let userId = parseInt(req.params.user_id)
     let pageContent = {
-      journalId,
-      userId,
       ...req.body
     }
     let page = await Page.create(pageContent)
@@ -58,10 +54,21 @@ const deletePage = async (req, res) => {
     throw error
   }
 }
+
+const getPageById = async (req, res) => {
+  try {
+    const page = await Page.findByPk(req.params.page_id)
+    res.send(page)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getPages,
   getJournalPages,
   addPage,
   updatePage,
-  deletePage
+  deletePage,
+  getPageById
 }
