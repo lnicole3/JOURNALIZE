@@ -1,5 +1,4 @@
 import Client from './api'
-import axios from 'axios'
 
 export const CreateJournal = async (userId, data) => {
   try {
@@ -12,9 +11,7 @@ export const CreateJournal = async (userId, data) => {
 
 export const GetJournal = async (data) => {
   try {
-    let response = await axios.get(
-      `http://localhost:3001/api/reviews/${data.id}`
-    )
+    let response = await Client.get(`/api/journals/${data.id}`)
     return response.data
   } catch (error) {
     throw error
@@ -23,7 +20,7 @@ export const GetJournal = async (data) => {
 
 export const GetJournalList = async () => {
   try {
-    let response = await axios.get('http://localhost:3001/api/journals')
+    let response = await Client.get('/api/journals')
     return response.data
   } catch (error) {
     throw error
