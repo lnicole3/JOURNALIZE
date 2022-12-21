@@ -5,7 +5,7 @@ module.exports = {
     dialect: 'postgres'
   },
   test: {
-    database: '<journalize_test>',
+    database: 'journalize_test',
     dialect: 'postgres'
   },
   production: {
