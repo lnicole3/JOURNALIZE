@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GetJournalList } from '../services/JournalsServices'
+import { GetJournalList } from '../services/Journal'
 import JournalCard from '../components/JournalCard'
 import Client from '../services/api'
 import NewJournal from '../components/NewJournal'
@@ -13,7 +13,7 @@ const Journals = ({ user }) => {
   }
 
   const apiCall = async () => {
-    let response = await Client.get('http://localhost:3001/api/journals')
+    let response = await Client.get('/api/journals')
     setJournalList(response.data)
   }
 
