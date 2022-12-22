@@ -6,11 +6,7 @@ import Client from "../services/api";
 
 const NewJournal = ({userId,apiCall}) => {
     let navigate = useNavigate()
-    const [formValues, setFormValues] = useState(
-        {
-            journalName: ""
-        }
-    )
+    const [formValues, setFormValues] = useState({ journal_name: "" })
     
 const CreateJournal = async (data) => {
         try {
@@ -22,7 +18,7 @@ const CreateJournal = async (data) => {
       }
 
 const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+    setFormValues({ [e.target.name]: e.target.value })
   }
 
   let handleSubmit = async (e) => {
@@ -30,7 +26,7 @@ const handleChange = (e) => {
     await CreateJournal({...formValues})
     setFormValues(
         {
-            journalName: ""
+            journal_name: ""
         }
     )
 apiCall()
@@ -41,9 +37,9 @@ return (
     <form onSubmit={handleSubmit}>
     <label htmlFor="journal-name">Enter Your Journal Name</label>
     <input className="journal-textbox"
-    name="journalName"
+    name="journal_name"
     onChange={handleChange}
-    value={formValues.journalName}
+    value={formValues.journal_name}
     ></input>
     <button onClick={handleSubmit} type="submit" className="submit-review">
      Submit

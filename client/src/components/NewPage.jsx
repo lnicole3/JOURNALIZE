@@ -29,16 +29,16 @@ const handleChange = (event) => {
         setFormState({ ...formState, [event.target.name]: event.target.value })
 }
 const handleSubmit = async (e) => {
-            e.preventDefault()
-            let res = await axios
-                .post('http://localhost:3001/api/pages', formState)
-                .then((res) => {
-                    navigate(-1)
-                })
-                .catch((error) => {
-                    console.log(error)
-                  })
-          }
+  e.preventDefault()
+  let res = await axios
+    .post('http://localhost:3001/api/pages', { ...formState, journal_id: journal_id })
+    .then((res) => {
+      navigate(-1)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
   return (
     <div>
         <h3>NewPage</h3>

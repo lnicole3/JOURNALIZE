@@ -19,6 +19,7 @@ const getJournalById = async (req, res) => {
 }
 
 const createJournal = async (req, res) => {
+  console.log('this is the request body', req.body)
   try {
     let userId = parseInt(req.params.user_id)
     let journalContent = {

@@ -13,7 +13,7 @@ const Journals = ({ user }) => {
   }
 
   const apiCall = async () => {
-    let response = await Client.get('/api/journals')
+    let response = await Client.get('/journals')
     setJournalList(response.data)
   }
 
