@@ -33,9 +33,9 @@ const Register = async (req, res) => {
       last_name,
       username,
       email,
-      password
+      passwordInput
     })
-    console.log(user)
+    res.send(user)
   } catch (error) {
     throw error
   }

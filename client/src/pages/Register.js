@@ -9,14 +9,14 @@ const Register = () => {
     last_name: '',
     username: '',
     email: '',
-    passwordInput: '',
+    password: '',
     confirmPassword: ''
   })
 
   let navigate = useNavigate()
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+    setFormValues({ [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
@@ -26,16 +26,8 @@ const Register = () => {
       last_name: formValues.last_name,
       username: formValues.username,
       email: formValues.email,
-      passwordInput: formValues.passwordInput,
+      password: formValues.password,
       confirmPassword: formValues.confirmPassword
-    })
-    setFormValues({
-      first_name: '',
-      last_name: '',
-      username: '',
-      email: '',
-      passwordInput: '',
-      confirmPassword: ''
     })
     navigate('/login')
   }
@@ -93,7 +85,7 @@ const Register = () => {
               onChange={handleChange}
               type="password"
               name="passwordInput"
-              value={formValues.passwordInput}
+              value={formValues.password}
               required
             />
           </div>
