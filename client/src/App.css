@@ -5,13 +5,14 @@
   grid-gap: 5px;
   align-content: space-between;
   align-items: stretch;
-  margin: 50px;
+  margin: 150px;
+  padding: 100px;
   font-family: 'Shadows Into Light', cursive;
   font-weight: bold;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 100vmin;
   pointer-events: none;
 }
 
@@ -23,16 +24,18 @@
 
 .App-header {
   background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 2;
   min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(30px + 2vmin);
   color: white;
 }
 .nav-links{
-  font-size: 15px;
+  font-size: 25px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -51,15 +54,17 @@ a {
 }
 
 .register{
-  display: flex inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-size: 30px;
+  margin: 20px auto;
+  padding: 150px;
+
+  width: 600px;
 }
 
 .register label{
-  display: flex;
-  justify-content: flex-start;
+ 
   padding: 10px 0;
 }
 
@@ -73,6 +78,11 @@ a {
   margin:30px;
 }
 
+.input-wrapper{
+  grid-column-start: 3;
+  grid-column-end: -1;
+ 
+}
 .home-wrapper{
   padding:20px;
   display: flex;
@@ -86,11 +96,13 @@ a {
 }
 
 form{
-  display: flex;
-  flex-direction: column;
+  grid-column-start: 3;
+  grid-column-end: 5;
   margin: auto 20px;
   padding: 10px;
 }
+
+.input
 
 textarea {
   height: 200px;
