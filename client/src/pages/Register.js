@@ -16,13 +16,21 @@ const Register = () => {
   let navigate = useNavigate()
 
   const handleChange = (e) => {
-    setFormValues({ [e.target.name]: e.target.value })
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await RegisterUser({...formValues])
-      setFormValues({
+    await RegisterUser({
+      first_name: formValues.first_name,
+      last_name: formValues.last_name,
+      username: formValues.username,
+      email: formValues.email,
+      passwordInput: formValues.passwordInput,
+      confirmPassword: formValues.confirmPassword
+    })
+
+    setFormValues({
       first_name: '',
       last_name: '',
       username: '',
