@@ -35,7 +35,7 @@ const Register = async (req, res) => {
       email,
       password
     })
-    res.send(user)
+    console.log(user)
   } catch (error) {
     throw error
   }

@@ -29,7 +29,6 @@ const Register = () => {
       passwordInput: formValues.passwordInput,
       confirmPassword: formValues.confirmPassword
     })
-
     setFormValues({
       first_name: '',
       last_name: '',
@@ -43,7 +42,6 @@ const Register = () => {
 
   return (
     <div className="register">
-      {' '}
       <h1>Register</h1>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
