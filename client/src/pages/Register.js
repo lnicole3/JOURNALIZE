@@ -88,12 +88,12 @@ const Register = () => {
           </div>
 
           <div className="input-wrapper">
-            <label htmlFor="passwordInput">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               type="password"
-              name="passwordInput"
-              value={formValues.passwordInput}
+              name="password"
+              value={formValues.password}
               required
             />
           </div>

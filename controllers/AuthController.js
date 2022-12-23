@@ -9,7 +9,11 @@ const Login = async (req, res) => {
     })
     if (
       user &&
-      (await middleware.comparePassword(user.password, req.body.passwordInput))
+      (await middleware.comparePassword(
+        user.password,
+        req.body.user.password,
+        req.body.password
+      ))
     ) {
       let payload = {
         id: user.id,
@@ -33,7 +37,7 @@ const Register = async (req, res) => {
       last_name,
       username,
       email,
-      passwordInput
+      password
     })
     res.send(user)
   } catch (error) {

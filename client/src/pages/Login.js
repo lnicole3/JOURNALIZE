@@ -14,7 +14,7 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser({ ...formValues })
-    setFormValues({ email: '', passwordInput: '' })
+    setFormValues({ email: '', password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
     navigate('/')
@@ -37,16 +37,16 @@ const SignIn = (props) => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="passwordInput">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               type="password"
-              name="passwordInput"
-              value={formValues.passwordInput}
+              name="password"
+              value={formValues.password}
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.passwordInput}>
+          <button disabled={!formValues.email || !formValues.password>
             Sign In
           </button>
         </form>
